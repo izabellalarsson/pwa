@@ -1,9 +1,6 @@
 'use client'
-import { Toaster } from '@/components/Toaster'
 import { useNotifications } from '@/hooks/useNotifications'
 import { useServiceWorker } from '@/hooks/useServiceWorker'
-import { string } from 'prop-types'
-import { useState } from 'react'
 
 export default function Home() {
   // Enable service worker...

@@ -4,6 +4,17 @@ Repository for lecture and workshop about PWA:s and push notifications.
 
 ---
 
+## Browsers
+
+Safari
+- macOS 13 and later
+- IOS 16.4
+
+Chrome
+- Down for whatever
+
+---
+
 ## Setup
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).

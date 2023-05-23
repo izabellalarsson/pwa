@@ -7,8 +7,10 @@ import { apiNotification, apiSubscribe, apiUnsubscribe } from '@/helpers/api'
  * Use notification
  */
 export const useNotifications = () => {
-  const [isSupported, setIsSupported]: [isSupported: boolean, setIsSupported: any] =
-  useState(true)
+  const [isSupported, setIsSupported]: [
+    isSupported: boolean,
+    setIsSupported: any
+  ] = useState(true)
   const [isActive, setIsActive]: [isActive: boolean, setIsActive: any] =
     useState(false)
   const [badgeCount, setBadgeCount]: [badgeCount: number, setBadgeCount: any] =
@@ -52,7 +54,7 @@ export const useNotifications = () => {
   }, [navigatorReady])
 
   /**
-   * Subsciption
+   * Handle subsciption
    * @param event
    */
   const handleSubscribe = async (event: MouseEvent<HTMLButtonElement>) => {
@@ -70,7 +72,7 @@ export const useNotifications = () => {
   }
 
   /**
-   * Handle un
+   * Handle unsubscribe
    * @param event
    */
   const handleUnsubscribe = async (event: MouseEvent<HTMLButtonElement>) => {
@@ -126,6 +128,7 @@ export const useNotifications = () => {
    * @param number
    */
   const handleBadgeCount = (number: number) => {
+    setBadgeCount(number)
     if (number <= 0) {
       ;(navigator as any).clearAppBadge()
     } else {
