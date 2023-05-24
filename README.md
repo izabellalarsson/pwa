@@ -96,6 +96,7 @@ NEXT_PUBLIC_WEB_PUSH_PUBLIC_KEY=""
 **Other tasks**
 - [ ] Be creative!
 - [ ] Update badge count on home screen
+- [ ] Create a network offline toaster
 - [ ] Rebuild cache to a database:ish solution like [Mongodb](https://www.mongodb.com/), [Redis](https://vercel.com/integrations/upstash), [MySQL](https://planetscale.com/)
 - [ ] Deploy to preffered host [Vercel](https://vercel.com/), [Netlify](https://www.netlify.com/)
 
@@ -107,3 +108,14 @@ NEXT_PUBLIC_WEB_PUSH_PUBLIC_KEY=""
 VAPID, which stands for Voluntary Application Server Identity, is a new way to send and receive website push notifications. Your VAPID keys allow you to send web push campaigns without having to send them through a service like Firebase Cloud Messaging (or FCM). Instead, the application server can voluntarily identify itself to your web push provider.
 
 [https://vapidkeys.com/](https://vapidkeys.com/)
+
+----
+
+## Links
+
+[firt.dev](https://firt.dev/) - Maximiliano Firtman creates lots of news and updates regarding PWA
+
+[firt.dev - IOS support](https://firt.dev/notes/pwa-ios/) - List of features IOS currently supports
+
+[Learn PWA](https://web.dev/learn/pwa/) - web.dev, all about PWA:s
+
