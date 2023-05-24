@@ -4,7 +4,9 @@
  * Install event,
  * do magic...
  */
-self.addEventListener('install', (event) => {})
+self.addEventListener('install', (event) => {
+  // Perhaps cache files?  
+})
 
 /**
  * Listen to push event
