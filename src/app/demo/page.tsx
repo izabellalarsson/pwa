@@ -24,7 +24,7 @@ export default function Demo() {
     handleSubscribe,
     handleUnsubscribe,
     handleClientNotification,
-    handleSendNotification,
+    handleSendServerNotification,
     handleBadgeCount,
   } = useNotifications()
 
@@ -39,7 +39,6 @@ export default function Demo() {
           PWA & push notifications
         </h1>
       </header>
-
       {!isActive && (
         <>
           <section className='flex justify-center'>
@@ -101,23 +100,25 @@ export default function Demo() {
             <div className='flex justify-center'>
               <button
                 className={COMPONENTS.button}
-                onClick={() =>
+                onClick={() => {
                   handleClientNotification({
                     title,
                     message,
                   })
-                }
+                  setToasterMessage('Sent to client')
+                }}
               >
                 Client notification
               </button>
               <button
                 className={COMPONENTS.button}
-                onClick={() =>
-                  handleSendNotification({
+                onClick={() => {
+                  handleSendServerNotification({
                     title,
                     message,
                   })
-                }
+                  setToasterMessage('Sent to server')
+                }}
               >
                 Server notification
               </button>

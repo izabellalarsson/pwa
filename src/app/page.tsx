@@ -3,7 +3,7 @@ import { useNotifications } from '@/hooks/useNotifications'
 import { useServiceWorker } from '@/hooks/useServiceWorker'
 
 export default function Home() {
-  // Enable service worker...
+  // Install service worker...
   useServiceWorker()
   const {
     isSupported,
@@ -11,7 +11,7 @@ export default function Home() {
     handleSubscribe,
     handleUnsubscribe,
     handleClientNotification,
-    handleSendNotification,
+    handleSendServerNotification,
     handleBadgeCount,
   } = useNotifications()
 

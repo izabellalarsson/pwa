@@ -79,26 +79,50 @@ NEXT_PUBLIC_WEB_PUSH_PUBLIC_KEY=""
 
 `/src/app/demo/page.tsx` - Demo page
 
+**Service Worker**
+
+Only works on HTTP or localhost domains.
+
 ---
 
 ## Tasks
 
 **Installation**
 - [ ] Install project
+- [ ] Copy `.env.example` to `.env`
 - [ ] Generate Vapid keys, put in `.env`
 
 **Main tasks**
 - [ ] 1. Ask user for permission to send notifications with `handleSubscribe`
-- [ ] 2. Ask user for permission to send notifications
-- [ ] 3. Send a server notification
-- [ ] 4. Manage to send a server notification to multiple units at the same time
+- [ ] 2. Send a client notification with `handleClientNotification`
+- [ ] 3. Send a server notification `handleSendNotification`
+- [ ] 4. Send a server notification to multiple units/browsers at the same time ⭐
 
 **Other tasks**
-- [ ] Be creative!
 - [ ] Update badge count on home screen
 - [ ] Create a network offline toaster
 - [ ] Rebuild cache to a database:ish solution like [Mongodb](https://www.mongodb.com/), [Redis](https://vercel.com/integrations/upstash), [MySQL](https://planetscale.com/)
 - [ ] Deploy to preffered host [Vercel](https://vercel.com/), [Netlify](https://www.netlify.com/)
+- [ ] Be creative!
+
+--
+
+## Run appication on network
+
+### local-ssl-proxy
+
+60% of the time it works every time
+
+https://www.npmjs.com/package/local-ssl-proxy
+
+### ngrok
+
+https://ngrok.com/
+
+### Other
+
+Choice is yours...
+
 
 
 ---
@@ -115,7 +139,7 @@ VAPID, which stands for Voluntary Application Server Identity, is a new way to s
 
 [firt.dev](https://firt.dev/) - Maximiliano Firtman creates lots of news and updates regarding PWA
 
-[firt.dev - IOS support](https://firt.dev/notes/pwa-ios/) - List of features IOS currently supports
+[firt.dev - iOS support](https://firt.dev/notes/pwa-ios/) - List of features iOS currently supports
 
 [Learn PWA](https://web.dev/learn/pwa/) - web.dev, all about PWA:s
 

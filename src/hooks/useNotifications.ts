@@ -59,15 +59,22 @@ export const useNotifications = () => {
    */
   const handleSubscribe = async (event: MouseEvent<HTMLButtonElement>) => {
     event.preventDefault()
-    const key = process.env.NEXT_PUBLIC_WEB_PUSH_PUBLIC_KEY as string
-    const sub = await registration.pushManager.subscribe({
-      userVisibleOnly: true,
-      applicationServerKey: base64ToUint8Array(key),
-    })
-    if (sub) {
-      setSubscription(sub)
-      setIsActive(true)
-      apiSubscribe(sub)
+    try {
+      await window.Notification.requestPermission()
+      const key = process.env.NEXT_PUBLIC_WEB_PUSH_PUBLIC_KEY as string
+      const sub = await registration.pushManager.subscribe({
+        userVisibleOnly: true,
+        applicationServerKey: base64ToUint8Array(key),
+      })
+      if (sub) {
+        setSubscription(sub)
+        setIsActive(true)
+        apiSubscribe(sub)
+      } else {
+        setIsSupported(false)
+      }
+    } catch (error) {
+      setIsSupported(false)
     }
   }
 
@@ -88,7 +95,7 @@ export const useNotifications = () => {
    * Handle send notification
    * @returns
    */
-  const handleSendNotification = async (notification: Notification) => {
+  const handleSendServerNotification = async (notification: Notification) => {
     apiNotification(notification)
   }
 
@@ -137,15 +144,17 @@ export const useNotifications = () => {
   }
 
   return {
+    // Props
     isSupported,
     isActive,
     badgeCount,
-
+    // Notifications
     handleSubscribe,
     handleUnsubscribe,
-    handleSendNotification,
-    handleClientPoll,
+    handleSendServerNotification,
     handleClientNotification,
+    handleClientPoll,
+    // Badge
     handleBadgeCount,
   }
 }
